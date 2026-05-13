@@ -33,7 +33,7 @@ function fixedShoe(cards: Card[]) {
   } as unknown as BaccaratShoe;
 }
 
-describe("Punto Banco engine", () => {
+describe("Baccarat engine", () => {
   it("stops third-card drawing on naturals", () => {
     const shoe = fixedShoe([card("A"), card("7"), card("A"), card("A"), card("9"), card("9")]);
     const hand = dealBaccaratHand(shoe);

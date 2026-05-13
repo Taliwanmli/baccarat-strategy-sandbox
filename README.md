@@ -2,28 +2,26 @@
 
 Offline baccarat simulator and strategy lab for studying Martingale-style betting risk. The app runs locally, uses pretend money only, and does not connect to any casino or betting service.
 
-## Download For Non-Technical Users
+## Download
 
-Use GitHub Releases after this project is pushed to GitHub:
+Download the latest desktop app from the repository's **Releases** page.
 
-1. Create a tag such as `v0.1.0` and push it.
-2. GitHub Actions builds macOS and Windows desktop packages.
-3. Users open the repository's **Releases** page, download the file for their computer, and launch the app.
+- macOS: download the `.dmg` or `.zip` file.
+- Windows: download the `.exe` installer or portable `.exe` file.
 
-Expected release files:
+The desktop app is designed for people who want to use the simulator without installing developer tools.
 
-- macOS: `.dmg` or `.zip`
-- Windows: `.exe` installer or portable `.exe`
+## How To Use
 
-The desktop app is an Electron wrapper around the local simulator. It is intended for people who do not want to install Node.js or run terminal commands.
-
-### Signing Note
-
-The included workflow builds unsigned desktop packages by default. Unsigned open-source apps can trigger macOS Gatekeeper or Windows SmartScreen warnings. For a smoother public release, add Apple Developer ID and Windows code-signing certificates to the repository secrets and extend the Electron Builder signing configuration.
+1. Open the app.
+2. Choose shoe settings such as deck count and optional random seed.
+3. Deal hands manually, or use **Strategy Lab** to run simulations.
+4. Hover over the small information icons in the app to see short explanations for settings and results.
+5. Compare single-session results with multi-session batch results to see how bankroll, unit size, and losing streaks affect risk.
 
 ## Strategy Lab
 
-The Strategy Lab is for visual study of individual baccarat sessions and many repeated sessions. It helps show how a Martingale can appear profitable in some short sessions while still failing under enough variance, finite bankroll limits, and table-limit-like stake growth.
+The Strategy Lab runs local simulations for visual study. It can show why a Martingale can appear profitable in some short sessions while still failing under enough variance, finite bankroll limits, and stake growth.
 
 Built-in presets:
 
@@ -48,9 +46,9 @@ With a finite bankroll, a long enough losing or interrupted recovery sequence ev
 
 This project is for education, visualization, and source-code study. It is not financial advice and should not be used to automate gambling.
 
-## Rules Implemented
+## Baccarat Rules Implemented
 
-- Standard Punto Banco baccarat.
+- Standard baccarat drawing rules.
 - 6-deck and 8-deck shoes.
 - Aces count as 1, cards 2-9 count as face value, and 10/J/Q/K count as 0.
 - Hand totals are modulo 10.
@@ -62,7 +60,7 @@ This project is for education, visualization, and source-code study. It is not f
 - Player and Banker bets push on ties.
 - The shoe reshuffles when remaining cards are below the configured threshold.
 
-## Local Development
+## Development
 
 Requirements:
 
@@ -75,7 +73,7 @@ Install dependencies:
 npm install
 ```
 
-Run the browser development server:
+Run locally:
 
 ```bash
 npm run dev
@@ -93,25 +91,14 @@ Build the web app:
 npm run build
 ```
 
-Build desktop packages locally:
+Build desktop packages:
 
 ```bash
 npm run desktop:mac
 npm run desktop:win
 ```
 
-macOS packages should be built on macOS. Windows packages should be built on Windows. The GitHub Actions workflow handles both platforms automatically.
-
-## Publishing A Release
-
-After pushing the repository to GitHub:
-
-```bash
-git tag v0.1.0
-git push origin v0.1.0
-```
-
-The release workflow will run tests, build the web app, package desktop apps for macOS and Windows, and attach the generated files to the GitHub Release.
+Desktop builds use Electron. macOS packages should be built on macOS, and Windows packages should be built on Windows.
 
 ## License
 
