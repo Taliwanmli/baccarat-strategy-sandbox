@@ -52,7 +52,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.artifact }}
-          path: release/*
+          path: |
+            release/*.dmg
+            release/*.exe
           if-no-files-found: error
 
   release:
@@ -71,4 +73,6 @@ jobs:
       - name: Publish release assets
         uses: softprops/action-gh-release@v2
         with:
-          files: artifacts/*
+          files: |
+            artifacts/*.dmg
+            artifacts/*.exe
