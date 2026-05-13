@@ -1,6 +1,6 @@
 {
   "name": "baccarat-strategy-sandbox",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Offline baccarat simulator and strategy lab for studying Martingale risk.",
   "author": "Baccarat Strategy Sandbox contributors",
   "license": "MIT",
