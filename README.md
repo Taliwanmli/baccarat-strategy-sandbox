@@ -2,14 +2,23 @@
 
 Offline baccarat simulator and strategy lab for studying Martingale-style betting risk. The app runs locally, uses pretend money only, and does not connect to any casino or betting service.
 
-## Download
+## Use The App
 
-Download the latest desktop app from the repository's **Releases** page.
+Desktop downloads are published on the repository's **Releases** page when a release is available.
 
-- macOS: download the `.dmg` or `.zip` file.
-- Windows: download the `.exe` installer or portable `.exe` file.
+Available release files may include:
 
-The desktop app is designed for people who want to use the simulator without installing developer tools.
+- macOS: `.dmg` or `.zip`
+- Windows: `.exe` installer or portable `.exe`
+
+If no release is available yet, the app can still be run from source with Node.js:
+
+```bash
+npm install
+npm run dev
+```
+
+Then open the local URL printed in the terminal.
 
 ## How To Use
 
